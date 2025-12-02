@@ -10,17 +10,16 @@ else:
 
     # Recorrer cada fila
     for i in range(n):
-        # Recorrer cada columna
         for j in range(n):
             # Condiciones para poner asterisco en la M:
             if j == 0 or j == n-1:
                 # Lados verticales de la M
                 print("*", end="")
             elif i <= centro and i == j:
-                # Diagonal izquierda (solo hasta el centro)
+                # Diagonal izquierda
                 print("*", end="")
             elif i <= centro and i + j == n-1:
-                # Diagonal derecha (solo hasta el centro)
+                # Diagonal derecha
                 print("*", end="")
             else:
                 print(" ", end="")
