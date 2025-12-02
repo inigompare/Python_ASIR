@@ -1,21 +1,26 @@
-# Triángulo ladeado (apuntando a la derecha)
+# Triángulo ladeado (apuntando a la izquierda)
 
-# Solicitar al usuario la altura (anchura máxima)
+# Solicitar al usuario la altura
 n = int(input("Introduce la altura del triángulo: "))
 
-# Parte superior (creciente)
+# Parte superior (creciente hacia la izquierda)
 for i in range(1, n + 1):
     if i == 1:
-        print('*')
+        # Primera fila: espacios para alinear a la derecha + asterisco
+        print(' ' * (2 * n - 2) + '*')
     else:
-        # Borde izquierdo + espacios internos + borde derecho
-        # Espacios internos siguen la serie impar: 1, 3, 5... (2*i - 3)
-        print('*' + ' ' * (2 * i - 3) + '*')
+        # Espacios iniciales + borde izquierdo + espacios internos + borde derecho
+        espacios_iniciales = 2 * (n - i)
+        espacios_internos = 2 * i - 3
+        print(' ' * espacios_iniciales + '*' + ' ' * espacios_internos + '*')
 
 # Parte inferior (decreciente)
 for i in range(n - 1, 0, -1):
     if i == 1:
-        print('*')
+        # Última fila: espacios para alinear a la derecha + asterisco
+        print(' ' * (2 * n - 2) + '*')
     else:
-        # Borde izquierdo + espacios internos + borde derecho
-        print('*' + ' ' * (2 * i - 3) + '*')
+        # Espacios iniciales + borde izquierdo + espacios internos + borde derecho
+        espacios_iniciales = 2 * (n - i)
+        espacios_internos = 2 * i - 3
+        print(' ' * espacios_iniciales + '*' + ' ' * espacios_internos + '*')
